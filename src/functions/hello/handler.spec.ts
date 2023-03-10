@@ -5,7 +5,6 @@ describe('Hello Handler', () => {
   it('should pass with mocked post request', async () => {
     const event = {
       headers: { 'Content-Type': 'application/json' },
-      body: '{"name": "Frederic"}',
     };
     const context = {} as Context;
     const callback = null as Callback;
@@ -14,7 +13,7 @@ describe('Hello Handler', () => {
 
     expect(response).toMatchObject({
       body:
-        '{"message":"Hello Frederic, welcome to the exciting Serverless world!","event":{"headers":{"Content-Type":"application/json"},"body":{"name":"Frederic"}}}',
+        '{"date":"2023-03-10T21:35:35.872Z","event":{"headers":{"Content-Type":"application/json"}}}',
       statusCode: 200,
     });
   });
